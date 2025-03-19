@@ -10,6 +10,25 @@
   
   
   <head>
+    <link rel="alternate" hreflang="en" href="https://SynergySupport-vn
+.github.io/" />
+<link rel="alternate" hreflang="vi" href="https://SynergySupport-vn
+.github.io/vn/" />
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          let userLang = navigator.language || navigator.userLanguage;
+          let langCode = userLang.split('-')[0]; // Extracts "fr" from "fr-FR"
+      
+          let availableLangs = ['vn']; // Add more if needed
+      
+          if (availableLangs.includes(langCode)) {
+            window.location.href = "/" + langCode + "/"; // Redirect non-English users
+          }
+        });
+      </script>
+      
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNXND9748L"></script>
 <script>
