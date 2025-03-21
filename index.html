@@ -32,16 +32,21 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          let userLang = navigator.language || navigator.userLanguage;
-          let langCode = userLang.split('-')[0]; // Extracts "fr" from "fr-FR"
-      
-          let availableLangs = ['vn']; // Add more if needed
-      
-          if (availableLangs.includes(langCode)) {
-            window.location.href = "/" + langCode + "/"; // Redirect non-English users
-          }
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+  let userLang = navigator.language || navigator.userLanguage;
+  let langCode = userLang.split('-')[0]; // Extracts "fr" from "fr-FR"
+
+  let availableLangs = ['vn']; // Add more if needed
+
+  // Detect if the visitor is Googlebot
+  let isGooglebot = /Googlebot|bingbot|DuckDuckBot|Baidu|Yandex|Yahoo! Slurp/i.test(navigator.userAgent);
+
+  // Only redirect real users, not Googlebot
+  if (!isGooglebot && availableLangs.includes(langCode)) {
+    window.location.href = "/" + langCode + "/"; // Redirect non-English users
+  }
+});
+
       </script>
       
 <!-- Google tag (gtag.js) -->
