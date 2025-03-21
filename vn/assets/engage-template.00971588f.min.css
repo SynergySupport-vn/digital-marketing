@@ -4591,6 +4591,7 @@ figcaption {
   overflow: hidden;
 }
 .label.small {
+  white-space: nowrap;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
   font-size: 0.875rem;
@@ -5020,7 +5021,7 @@ figcaption {
   bottom: -56%;
 }
 .solutions-header_wrapper {
-  height: 3.2rem;
+  height: 3.8rem;
   position: relative;
   overflow: clip;
 }
@@ -5043,12 +5044,14 @@ figcaption {
   justify-content: flex-start;
   align-items: center;
   display: flex;
+  margin-bottom: 17px;
 }
 .solutions-header_item._3 {
   top: 200%;
 }
 .solutions-header_item._2 {
   top: 100%;
+  margin-bottom: 5px;
 }
 .solutions-header_icon {
   width: 3rem;
@@ -7343,7 +7346,7 @@ figcaption {
     max-width: 28rem;
   }
   .solutions-header_wrapper {
-    height: 2.9rem;
+    height: 3.7 rem;
   }
   .solutions-header_icon {
     width: 2.75rem;
@@ -8051,7 +8054,7 @@ figcaption {
     display: none;
   }
   .solutions-header_wrapper {
-    height: 1.9rem;
+    height: 2.5rem;
   }
   .solutions-header_icon {
     width: 2rem;
