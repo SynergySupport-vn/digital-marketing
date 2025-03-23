@@ -14,10 +14,14 @@
    
 <script>
   const userLang = navigator.language || navigator.userLanguage;
-  if (userLang.startsWith("vi")) {
+  const savedLang = localStorage.getItem("lang");
+
+  if (!savedLang && userLang.startsWith("vi")) {
+    localStorage.setItem("lang", "vn"); // Save user preference
     window.location.href = "/vn/index.html";
   }
 </script>
+
 
 
 
