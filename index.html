@@ -14,13 +14,19 @@
    
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let userLang = navigator.language || navigator.userLanguage || "en"; // Get user's language or default to English
-    let langCode = userLang.split('-')[0].toLowerCase(); // Extract main language code (e.g., "fr-FR" → "fr")
+    let userLang = navigator.language || navigator.userLanguage || "en"; // Get browser language
+    let langCode = userLang.split('-')[0].toLowerCase(); // Extract main language code
 
-    let supportedLangs = ['vn']; // List of available language versions
+    let supportedLangs = ["vn"]; // Only Vietnamese has a version, everything else stays on English
 
-    if (supportedLangs.includes(langCode) && !window.location.pathname.startsWith("/vn")) {
-      window.location.href = "/vn/"; // Redirect only if the user should be on the Vietnamese version
+    let currentPath = window.location.pathname; // Get current URL path
+
+    if (supportedLangs.includes(langCode) && !currentPath.startsWith("/vn/")) {
+      // Redirect Vietnamese users to /vn/
+      window.location.replace("/vn/");
+    } else if (!supportedLangs.includes(langCode) && currentPath.startsWith("/vn/")) {
+      // Redirect non-Vietnamese users back to root if they somehow land on /vn/
+      window.location.replace("/");
     }
   });
 </script>
