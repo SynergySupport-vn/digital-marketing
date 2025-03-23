@@ -14,13 +14,13 @@
    
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let userLang = navigator.language || navigator.userLanguage || "en"; // Default to English if undefined
-    let langCode = userLang.split('-')[0].toLowerCase(); // Ensure lowercase (e.g., "FR" -> "fr")
+    let userLang = navigator.language || navigator.userLanguage || "en"; // Get user's language or default to English
+    let langCode = userLang.split('-')[0].toLowerCase(); // Extract main language code (e.g., "fr-FR" → "fr")
 
-    let availableLangs = ['vn']; // List of languages that need redirection
+    let supportedLangs = ['vn']; // List of available language versions
 
-    if (availableLangs.includes(langCode) && !window.location.pathname.startsWith("/vn")) {
-      window.location.href = "/vn/"; // Redirect only if not already on /vn/
+    if (supportedLangs.includes(langCode) && !window.location.pathname.startsWith("/vn")) {
+      window.location.href = "/vn/"; // Redirect only if the user should be on the Vietnamese version
     }
   });
 </script>
