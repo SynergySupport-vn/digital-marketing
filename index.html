@@ -30,13 +30,14 @@
     // Create a new favicon element
     var link = document.createElement("link");
     link.rel = "icon";
-    link.type = "image/png";  // Adjust type if using .ico
-    link.href = "/favicon.png"; // Use "/" to indicate root directory
+    link.type = "image/x-icon"; // ICO file type
+    link.href = "/favicon.ico"; // Make sure this file exists in the root
 
     // Add the new favicon to the head
     document.head.appendChild(link);
   });
 </script>
+
 
 
 
