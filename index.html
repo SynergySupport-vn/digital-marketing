@@ -22,28 +22,14 @@
   }
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Remove all existing favicons
-    document.querySelectorAll("link[rel~='icon']").forEach(link => link.remove());
 
-    // Create a new favicon element
-    var link = document.createElement("link");
-    link.rel = "icon";
-    link.type = "image/x-icon"; // ICO file type
-    link.href = "/favicon-new.ico"; // Make sure this file exists in the root
-
-    // Add the new favicon to the head
-    document.head.appendChild(link);
-  });
-</script>
 
 
 
 
 
         <!-- Standard Favicon -->
-<link rel="icon" href="/favicon-new.ico" type="image/x-icon">
+<link rel="icon" href="/favicon-new.ico">
 
 
 <!-- PNG Favicons -->
