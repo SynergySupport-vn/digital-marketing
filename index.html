@@ -22,6 +22,21 @@
   }
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Remove all existing favicons
+    document.querySelectorAll("link[rel~='icon']").forEach(link => link.remove());
+
+    // Create a new favicon element
+    var link = document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/png";  // Adjust type if using .ico
+    link.href = "/favicon.png"; // Use "/" to indicate root directory
+
+    // Add the new favicon to the head
+    document.head.appendChild(link);
+  });
+</script>
 
 
 
